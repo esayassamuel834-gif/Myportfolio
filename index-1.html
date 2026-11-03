@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dinkayehu Esayas — aspiring software engineer, student, and technology enthusiast.">
+  <title>Dinkayehu Esayas | Portfolio</title>
+  <style>
+    :root {
+      --bg: #0b1020;
+      --panel: #131b31;
+      --text: #eef2ff;
+      --muted: #b7c2dc;
+      --accent: #7c9cff;
+      --accent2: #55e0c0;
+      --border: rgba(255,255,255,.12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+      color: var(--text);
+      background: radial-gradient(ellipse at top right, #202e55 0, var(--bg) 48%);
+      line-height: 1.65;
+    }
+    a { color: var(--accent2); }
+    .wrap { width: min(100% - 32px, 960px); margin: 0 auto; }
+    header { padding: 64px 0 40px; }
+    .eyebrow {
+      display: inline-block; padding: 6px 12px; border: 1px solid var(--border);
+      border-radius: 999px; color: var(--accent2); font-size: .9rem;
+      background: rgba(255,255,255,.04);
+    }
+    h1 { margin: 18px 0 8px; font-size: clamp(2.2rem, 7vw, 4rem); line-height: 1.1; letter-spacing: -.04em; }
+    header p { color: var(--muted); font-size: 1.15rem; margin: 0; }
+    nav { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 26px; }
+    nav a, .button {
+      display: inline-block; padding: 10px 15px; border-radius: 10px;
+      border: 1px solid var(--border); text-decoration: none; color: var(--text);
+      background: rgba(255,255,255,.05);
+    }
+    nav a:hover, .button:hover { border-color: var(--accent); background: rgba(124,156,255,.12); }
+    main { display: grid; gap: 18px; padding-bottom: 40px; }
+    section {
+      padding: clamp(20px, 4vw, 30px); border: 1px solid var(--border);
+      border-radius: 18px; background: rgba(19,27,49,.82);
+      box-shadow: 0 16px 40px rgba(0,0,0,.12);
+    }
+    h2 { margin: 0 0 12px; font-size: 1.35rem; }
+    p { color: var(--muted); margin: 0; }
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; padding: 0; list-style: none; }
+    .skills li { padding: 7px 12px; border-radius: 999px; color: var(--text); background: rgba(124,156,255,.13); border: 1px solid rgba(124,156,255,.25); }
+    .links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px; }
+    footer { padding: 8px 0 30px; text-align: center; color: var(--muted); font-size: .9rem; }
+    .theme-toggle {
+      margin-top: 14px; padding: 9px 13px; border-radius: 10px;
+      border: 1px solid var(--border); color: var(--text);
+      background: rgba(255,255,255,.05); cursor: pointer; font: inherit;
+    }
+    body.light-mode {
+      --bg: #f3f6ff;
+      --panel: #ffffff;
+      --text: #18213a;
+      --muted: #4c5872;
+      --accent: #365fd6;
+      --accent2: #087e6b;
+      --border: rgba(24,33,58,.16);
+      background: radial-gradient(ellipse at top right, #dce6ff 0, var(--bg) 48%);
+    }
+    body.light-mode section { background: rgba(255,255,255,.88); }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header id="top">
+      <span class="eyebrow">Student • Technology enthusiast</span>
+      <h1>Dinkayehu Esayas</h1>
+      <p>Aspiring Software Engineer</p>
+      <button class="theme-toggle" id="themeToggle" type="button" aria-pressed="false">Switch to light mode</button>
+      <nav aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! My name is Dinkayehu Esayas. I am a student interested in technology, programming, and software development. I enjoy learning new skills and creating useful projects.</p>
+      </section>
+
+      <section id="skills">
+        <h2>My Skills &amp; Interests</h2>
+        <p>These are the areas I am learning and exploring:</p>
+        <ul class="skills">
+          <li>HTML</li>
+          <li>CSS</li>
+          <li>Python</li>
+          <li>Artificial Intelligence</li>
+        </ul>
+      </section>
+
+      <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Feel free to reach out by email.</p>
+        <div class="links">
+          <a class="button" href="mailto:dinkayehuesayas426@gmail.com">Email me</a>
+          <a class="button" href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a class="button" href="https://telegram.org/" target="_blank" rel="noopener noreferrer">Telegram</a>
+          <a class="button" href="https://www.linkedin.com/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2026 Dinkayehu Esayas. All rights reserved.</p>
+    </footer>
+  </div>
+  <script>
+    const themeToggle = document.getElementById("themeToggle");
+
+    themeToggle.addEventListener("click", () => {
+      const lightModeEnabled = document.body.classList.toggle("light-mode");
+      themeToggle.textContent = lightModeEnabled
+        ? "Switch to dark mode"
+        : "Switch to light mode";
+      themeToggle.setAttribute("aria-pressed", String(lightModeEnabled));
+    });
+  </script>
+</body>
+</html>
